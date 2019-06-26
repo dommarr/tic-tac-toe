@@ -2,39 +2,103 @@
 
 # Tic Tac Toe
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+A SPA of the classic game, built by `Dom Marrone`.
 
 ## Technologies
 
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `TicTacToe-client` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+1. `JavaScript`
+2. `HTML`
+3. `CSS`
+4. `SaSS`
+5. `Bootstrap`
+5. `jQuery`
+6. `AJAX`
 
 ## Planning
 
+### Project Requirements
+```markdown
+#### Deployment
+
+Be deployed online, where the rest of the world can access it.
+
+1.  [ ] Deploy on your public Github page, not Github Enterprise.
+1.  [ ] Present a working browser game, built by you, hosted and deployed on GitHub Pages.
+
+#### Version Control
+
+Demonstrate using version control by:
+
+1.  [x] Sharing your work through a git repository hosted on Github.
+1.  [ ] Making frequent, cohesive commits dating back to the **first day**
+of the project week.
+
+#### Documentation
+
+Produce documentation in the form of a **README**, which must:
+
+1.  [x] Pin your repository on GitHub as a Popular Repository
+1.  [ ] Complete the repository `Description` field and `Website` field with a meaningful sentence description of the application and link to the live URL
+1.  [ ] List technologies used
+1.  [ ] Document your planning and tell a story about your development process and problem-solving strategy.
+1.  [ ] List unsolved problems which would be fixed in future iterations.
+1.  [ ] Link to wireframes and user stories.
+
+#### Technical Specifications
+
+1.  [ ] Use a custom game engine written by you.
+1.  [ ] Be a single-page application, no browser refresh.
+1.  [ ] Render a game board in the browser.
+1.  [ ] Switch turns between X and O (or whichever markers you select).  Tip:  Assume player X is the first player to start the game.
+1.  [ ] Visually display which side won if a player gets three in a row or show a draw if neither wins.
+1.  [ ] Support playing multiple games, one at a time.
+1.  [ ] Use jQuery for DOM manipulation and event handling.
+1.  [ ] Use AJAX for interacting with a provided API.
+
+#### API Specifications
+
+1.  [ ] Create new games on the server. (CREATE)
+1.  [ ] Update a game by storing new moves. (UPDATE)
+1.  [ ] Visually display the results of retrieving game statistics, such as total games won by a user. (READ)
+1.  [ ] Give feedback to the user after each action.
+
+#### Auth Specifications
+
+1.  [ ] Signup with email, password, and password confirmation.
+1.  [ ] Login with email and password.
+1.  [ ] Logout when logged in.
+1.  [ ] Change password with current and new password.
+1.  [ ] Signup and Signin must only be available to not signed in users.
+1.  [ ] Logout and Change password must only be available to signed in users.
+1.  [ ] Give feedback to the user after each action's success or failure.
+1.  [ ] All forms must clear after submit success or failure
+
+#### DO NOT!!
+
+1.  [ ] Delete your repository at any time or start over.
+1.  [ ] Rely on refreshing the page for any functionality.
+1.  [ ] Have any user-facing bugs.
+    -  [ ] Display non-functional buttons, nor buttons that do not successfully complete a task.
+    -  [ ] Show actions at inappropriate times (example: sign out button when not signed in).
+    -  [ ] Forms not clearing at appropriate times (example: sign up form not clearing after success).
+1.  [ ] Allow the same game to be played after a player has won or tied.
+1.  [ ] Allow players to move in the same square more than once.
+1.  [ ] Change players when an invalid move is made.
+1.  [ ] Use alerts for anything.
+1.  [ ] Display errors or warnings in the console.
+1.  [ ] Display debugging messages in the console.
+```
+
+### Game Rules
+1. The first player to play, `player 1`, will be randomly assigned.
+2. `player 1` picks a square to lay down an `X`.
+3. `player 2` picks a square to lay down an `O`.
+  1. `player 2` cannot select an already filled square.
+  2. If `player 2` selects an unavailable square, throw an error and ask them the try again.
+4. `player 1` goes again and picks an available square to lay down an `X`.
+  1. The player is attempting to secure three squares in a row.
+5. Steps 2-4 will repeat until 3 squares in a row have either an `X` or `O`.
+6. When a player has three squares in a row, stop the game, declare the winner and have an animation celebrating their win.
 
 
 ## Development Process
