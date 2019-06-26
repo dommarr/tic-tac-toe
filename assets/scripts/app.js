@@ -7,13 +7,11 @@
 // require('./example')
 
 const authEvents = require('./auth/events')
-const exampleEvents = require('./examples/events')
+//const exampleEvents = require('./examples/events')
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
-
-  $('#create-example').on('submit', exampleEvents.onCreateExample)
 })
