@@ -14,7 +14,22 @@
 
     <body>
       <h1>Tic Tac Toe, Yo</h1>
-      <!-- Sign Up -->
+      <!-- Game Board -->
+      <div class="container">
+        <div class="row">
+          <div class="board border border-dark h-25 d-inline-block col-4">X</div>
+          <div class="board border border-dark h-25 d-inline-block col-4">X</div>
+          <div class="board border border-dark h-25 d-inline-block col-4">X</div>
+          <div class="board border border-dark h-25 d-inline-block col-4">X</div>
+          <div class="board border border-dark h-25 d-inline-block col-4">X</div>
+          <div class="board border border-dark h-25 d-inline-block col-4">X</div>
+          <div class="board border border-dark h-25 d-inline-block col-4">X</div>
+          <div class="board border border-dark h-25 d-inline-block col-4">X</div>
+          <div class="board border border-dark h-25 d-inline-block col-4">X</div>
+        </div>
+      </div>
+
+       <!-- Sign Up -->
       <div class="row">
       <form id="sign-up" class="col-md-6 mb-5">
         <h2>Sign Up</h2>
@@ -23,7 +38,7 @@
         <input class="form-control mb-2" type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
         <button class="btn btn-primary">Sign Up</button>
       </form>
-      <!-- Sign In -->
+       <!-- Sign In -->
       <form id="sign-in" class="col-md-6 mb-5">
         <h2>Sign In</h2>
         <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
@@ -31,11 +46,11 @@
         <button class="btn btn-primary">Sign In</button>
       </form>
       </div>
-      <!-- Button trigger modal -->
+       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-        Launch demo modal
+        <!-- Launch demo modal -->
       </button>
-      <!-- Modal -->
+       <!-- Modal -->
       <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -55,14 +70,14 @@
           </div>
         </div>
       </div>
-      <!-- Change Password -->
+       <!-- Change Password -->
       <h2>Change Password</h2>
       <form id="change-password">
         <input type="password" name="passwords[old]" placeholder="Old Password">
         <input type="password" name="passwords[new]" placeholder="New Password">
         <button class="btn btn-primary">Change Password</button>
       </form>
-      <!-- Sign Out -->
+       <!-- Sign Out -->
       <h2>Sign Out</h2>
       <button id="sign-out" class="btn btn-primary">Sign Out</button>
 

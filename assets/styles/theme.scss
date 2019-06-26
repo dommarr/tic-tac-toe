@@ -1,0 +1,23 @@
+@import 'colors';
+@import 'typography';
+
+$background-color: $paper-white;
+$font-color: $nearly-black;
+$highlight-color: $light-gray;
+$min-dim: 18rem;
+
+.board {
+  background-color: $background-color;
+  text-align: center;
+  vertical-align: middle;
+  //min-height: $min-dim;
+  // display: inline-block;
+  // height: 5em;
+  // margin: .25rem;
+  // width: 5em;
+}
+
+.col-4 {
+  padding-top:25%;
+  width:25%;
+}
