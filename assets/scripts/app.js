@@ -7,11 +7,22 @@
 // require('./example')
 
 const authEvents = require('./auth/events')
+const gameEvents = require('./game/events')
 // const exampleEvents = require('./examples/events')
 
-let turnSuccess = 'n'
+// Authentication
+$(() => {
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out').on('click', authEvents.onSignOut)
+})
+
+// Game status trackers
 let currentPlayer = 1
 let game = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+let turnSuccess = 'n'
+let win = 'n'
 
 // let recordTurn = () => {
 //   let index = $('.board').index(this)
@@ -31,20 +42,15 @@ const winner = function () {
     (game[3] === game[4] && game[4] === game[5] && game[3] > 0) ||
     (game[6] === game[7] && game[7] === game[8] && game[6] > 0)
   ) {
+    win = 'y'
     console.log(`Player ${currentPlayer} wins!!`)
+    $('#currentPlayer').text(`Player ${currentPlayer} wins!!`)
+    // $('.board').off('click')
     // Add modal, maybe toggle (hide/show)
   }
 }
 
-// Authentication
-$(() => {
-  $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('click', authEvents.onSignOut)
-})
-
-// Turn Logic
+// Game Logic
 $('.board').on('click', function (event) {
   let square = $(event.target)
   // Check for empty square
@@ -69,20 +75,31 @@ $('.board').on('click', function (event) {
   } else {
     turnSuccess = 'n'
     // Need to add alert/modal for unsuccessful turn
+    alert('Please select an empty square.')
   }
   console.log(game)
-  // If turn was succesful, check for winner, then change player
+  // If turn was succesful, check for winner
   if (turnSuccess === 'y') {
     winner()
-    currentPlayer = (currentPlayer === 1 ? 2 : 1)
+    // If no winner, change current player
+    if (win === 'n') {
+      currentPlayer = (currentPlayer === 1 ? 2 : 1)
+      $('#currentPlayer').text(`Player ${currentPlayer}'s Turn`)
+    }
   }
 })
 
+// Start a new game
 $('#new-game').on('click', function (event) {
   // Erase board
   $('.board').empty()
-  // Reset score keeper
-  game = [0, 0, 0, 0, 0, 0, 0, 0, 0]
   // Reset current plater
   currentPlayer = 1
+  $('#currentPlayer').text(`Player ${currentPlayer}'s Turn`)
+  // Reset score keeper
+  game = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  // Reset win
+  win = 'n'
+  // // Reset event handler
+  // $('.board').on()
 })
