@@ -10,8 +10,13 @@ const authEvents = require('./auth/events')
 // const exampleEvents = require('./examples/events')
 
 let turnSuccess = 'n'
-let lastTurn = 'o'
-// let game = []
+let currentPlayer = 1
+let game = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+// let recordTurn = () => {
+//   let index = $('.board').index(this)
+//   game.splice(index, 1, 1)
+//   console.log(game)
+// }
 // const winner = () => {
 //
 // }
@@ -25,21 +30,30 @@ $(() => {
 
 // Turn Logic
 $('.board').on('click', function (event) {
-  let target = $(event.target)
+  let square = $(event.target)
   // Check for empty square
-  if (target.is(':empty')) {
+  if (square.is(':empty')) {
     // If empty & last turn was O, place X
-    if (lastTurn === 'o') {
-      target.text('X')
+    if (currentPlayer === 1) {
+      square.text('X')
+      // Record turn in game array
+      let index = $('.board').index(this)
+      game.splice(index, 1, 1)
       turnSuccess = 'y'
-      lastTurn = 'x'
+      // Change player
+      currentPlayer = 2
       // If empty & last turn was X, place O
-    } else if (lastTurn === 'x') {
-      target.text('O')
+    } else if (currentPlayer === 2) {
+      square.text('O')
+      // Record turn in game array
+      let index = $('.board').index(this)
+      game.splice(index, 1, 2)
       turnSuccess = 'y'
-      lastTurn = 'o'
+      // Change player
+      currentPlayer = 1
     }
   } // Need to add else for if not empty, then give alert/modal.
+console.log(game)
 })
 
 $('#new-game').on('click', function (event) {
