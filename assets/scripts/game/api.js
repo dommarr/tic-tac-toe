@@ -1,7 +1,7 @@
 const config = require('./../config')
 const store = require('../store')
 
-const getRecord = (updateObject, gameID) => {
+const getRecord = () => {
   return $.ajax({
     url: config.apiUrl + '/games?over=true',
     method: 'GET',

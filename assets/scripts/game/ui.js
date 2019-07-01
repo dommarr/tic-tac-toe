@@ -9,32 +9,13 @@ const hideMessaging = function () {
 }
 
 const createGameSuccess = responseData => {
-  // console.log(responseData.game.id)
-  // const gameId = responseData.game.id
-  // console.log('gameId is ' + gameId)
   store.game = responseData.game
-  // console.log('store.newGame is ' + store.game)
   $('#game').show()
   $('#message').text('New Game! You are player X.')
   $('#message').css('color', 'green')
   $('#message').show()
   hideMessaging()
 }
-
-// const createGameSuccess = function (gameData) {
-//   $('.board').empty()
-//   currentPlayer = 1
-//   $('#currentPlayer').text(`Player ${currentPlayer}'s Turn`)
-//   game = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-//   console.log(game)
-//   win = 'n'
-//   $('#message').text('New Game!')
-//   $('#message').css('color', 'green')
-//   $('#message').show()
-//   hideMessaging()
-//   $('form').trigger('reset')
-// }
-// NOT COMPLETE**************
 
 const createGameFailure = function (data) {
   $('#message').text('New game failed.')
@@ -43,26 +24,6 @@ const createGameFailure = function (data) {
   hideMessaging()
 }
 
-// Check for winner
-// const winner = function () {
-//   if (
-//     (game[0] === game[1] && game[1] === game[2] && game[0] > 0) ||
-//     (game[0] === game[4] && game[4] === game[8] && game[0] > 0) ||
-//     (game[0] === game[3] && game[3] === game[6] && game[0] > 0) ||
-//     (game[1] === game[4] && game[4] === game[7] && game[1] > 0) ||
-//     (game[2] === game[4] && game[4] === game[6] && game[2] > 0) ||
-//     (game[2] === game[5] && game[5] === game[8] && game[2] > 0) ||
-//     (game[3] === game[4] && game[4] === game[5] && game[3] > 0) ||
-//     (game[6] === game[7] && game[7] === game[8] && game[6] > 0)
-//   ) {
-//     win = 'y'
-//     console.log(`Player ${currentPlayer} wins!!`)
-//     $('#currentPlayer').text(`Player ${currentPlayer} wins!!`)
-//     // $('.board').off('click')
-//     // Add modal, maybe toggle (hide/show)
-//   }
-// }
-
 const updateGameSuccess = responseData => {
   // $('#message').text('Nicely played!')
   // $('#message').css('color', 'green')
@@ -70,10 +31,11 @@ const updateGameSuccess = responseData => {
   // hideMessaging()
 }
 
-const getRecordSuccess = () => {
-  $('#message').text(`Your record is ${store.game}.`)
+const getRecordSuccess = responseData => {
+  $('#message').text(`You've played ${responseData.games.length} games.`)
   $('#message').show()
   hideMessaging()
+  console.log(responseData)
 }
 
 const getRecordFailure = () => {
@@ -125,7 +87,6 @@ const getRecordFailure = () => {
 //   hideMessaging()
 //   $('form').trigger('reset')
 // }
-
 // // Game Logic
 // $('.board').on('click', function (event) {
 //   let square = $(event.target)
@@ -148,9 +109,9 @@ const getRecordFailure = () => {
 //       // Record turn in game array
 //       let index = $('.board').index(this)
 //       game.spli// $('#message').text('Nicely played!')
-  // $('#message').css('color', 'green')
-  // $('#message').show()
-  // hideMessaging()ce(index, 1, 2)
+// $('#message').css('color', 'green')
+// $('#message').show()
+// hideMessaging()ce(index, 1, 2)
 //       // Record successful turn
 //       turnSuccess = 'y'
 //     }
@@ -170,7 +131,6 @@ const getRecordFailure = () => {
 //     }
 //   }
 // })
-
 // const updateBookSuccess = function (data) {
 //   $('#books-display').html(`
 //     <h4>Title: ${data.book.title}</h4>

@@ -36,8 +36,6 @@ const winner = function () {
     win = true
     console.log(`Player ${currentPlayer} wins!!`)
     $('#currentPlayer').text(`Player ${currentPlayer} wins!!`)
-    // $('.board').off('click')
-    // Add modal, maybe toggle (hide/show)
   }
 }
 
@@ -76,7 +74,7 @@ const onShowPassword = event => {
 // Game Logic
 const onUpdateGame = function (event) {
   event.preventDefault()
-  let square = $(event.target)
+  const square = $(event.target)
   // Check for empty square
   if (square.is(':empty')) {
     // If empty, fill square with X or O
