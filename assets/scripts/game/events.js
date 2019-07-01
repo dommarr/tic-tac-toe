@@ -13,6 +13,14 @@ let win = false
 let index = -1
 let updateObject = {}
 
+// Hide messaging logic
+const hideMessaging = function () {
+  setTimeout(function () {
+    $('#message').text('')
+    $('#message').hide()
+  }, 4000)
+}
+
 // Check for winner
 const winner = function () {
   if (
@@ -33,8 +41,24 @@ const winner = function () {
   }
 }
 
+const onGetRecord = event => {
+  event.preventDefault()
+  api.getRecord()
+    .then(ui.getRecordSuccess)
+    .catch(ui.getRecordFailure)
+}
+
 // Create New Game
 const onCreateGame = event => {
+  // Erase board
+  $('.board').empty()
+  // Reset current plater
+  currentPlayer = 'X'
+  $('#currentPlayer').text(`Player ${currentPlayer}'s Turn`)
+  // Reset score keeper
+  game = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  // Reset win
+  win = false
   console.log('Requested new game.')
   event.preventDefault()
   const gameData = getFormFields(event.target)
@@ -43,13 +67,19 @@ const onCreateGame = event => {
     .catch(ui.createGameFailure)
 }
 
+// Change passwords
+const onShowPassword = event => {
+  $('#password').prop('disabled', true)
+  $('#change-password').show()
+}
+
 // Game Logic
 const onUpdateGame = function (event) {
   event.preventDefault()
   let square = $(event.target)
   // Check for empty square
   if (square.is(':empty')) {
-    // If empty, fill square.
+    // If empty, fill square with X or O
     square.text(currentPlayer)
     // Record turn in game array
     index = $('.board').index(this)
@@ -58,8 +88,10 @@ const onUpdateGame = function (event) {
     turnSuccess = 'y'
   } else {
     turnSuccess = 'n'
-    // Need to add alert/modal for unsuccessful turn
-    alert('Please select an empty square.')
+    $('#message').text('Please select an empty square.')
+    $('#message').css('color', 'red')
+    $('#message').show()
+    hideMessaging()
   }
   console.log(`game array is ${game}`)
   // If turn was succesful, check for winner
@@ -76,6 +108,12 @@ const onUpdateGame = function (event) {
           over: win
         }
       }
+      // update messaging of a nice play
+      $('#message').text('Nicely played!')
+      $('#message').css('color', 'green')
+      $('#message').show()
+      hideMessaging()
+      // switch player
       currentPlayer = (currentPlayer === 'X' ? 'O' : 'X')
       $('#currentPlayer').text(`Player ${currentPlayer}'s Turn`)
     } else {
@@ -118,5 +156,7 @@ const onUpdateGame = function (event) {
 
 module.exports = {
   onCreateGame,
-  onUpdateGame
+  onUpdateGame,
+  onGetRecord,
+  onShowPassword
 }

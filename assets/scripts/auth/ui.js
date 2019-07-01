@@ -2,10 +2,19 @@
 
 const store = require('../store')
 
+const hideMessaging = function () {
+  setTimeout(function () {
+    $('#message').text('')
+    $('#message').hide()
+  }, 8000)
+}
+
 const successMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
+  $('#message').show()
+  hideMessaging()
   // Clear out forms
   $('form').trigger('reset')
 }
@@ -14,12 +23,16 @@ const failureMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('success')
   $('#message').addClass('failure')
+  $('#message').show()
+  hideMessaging()
   // Clear out forms
   $('form').trigger('reset')
 }
 
 const signUpSuccess = responseData => {
-  successMessage('You signed up successfully!')
+  successMessage('Thanks for signing up!')
+  $('#login').hide()
+  $('#nav').show()
 }
 
 const signUpFailure = () => {
@@ -28,10 +41,12 @@ const signUpFailure = () => {
 
 const signInSuccess = responseData => {
   console.log('Response data is ', responseData)
-  successMessage('You signed in successfully!')
+  successMessage('Sign in successful.')
   // Keeping track of the user, so we can have the token for the API.
   // We use 'store' so we can access the token in any file.
   store.user = responseData.user
+  $('#login').hide()
+  $('#nav').show()
 }
 
 const signInFailure = () => {
@@ -39,7 +54,9 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = responseData => {
-  successMessage('You changed your password successfully!')
+  successMessage('Password changed.')
+  $('#change-password').hide()
+  $('#password').prop('disabled', false)
 }
 
 const changePasswordFailure = () => {
@@ -47,7 +64,11 @@ const changePasswordFailure = () => {
 }
 
 const SignOutSuccess = () => {
-  successMessage('You signed out successfully!')
+  successMessage('Sign out succesful.')
+  $('#nav').hide()
+  $('#change-password').hide()
+  $('#game').hide()
+  $('#login').show()
 }
 
 const SignOutFailure = () => {

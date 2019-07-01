@@ -18,6 +18,20 @@
 
       <p id="message"></p>
 
+      <nav id="nav">
+        <button id="record" class="btn btn-primary">Your Record</button>
+        <button id="new-game" class="btn btn-primary">New Game</button>
+        <button id="sign-out" class="btn btn-primary">Sign Out</button>
+        <button id="password" class="btn btn-primary">Change Password</button>
+      </nav>
+
+      <form id="change-password">
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+        <input type="password" name="passwords[new]" placeholder="New Password">
+        <button class="btn btn-primary">Change Password</button>
+      </form>
+
+<section id="game">
       <h2 id="currentPlayer">Player X's Turn</h2>
 
       <!-- Game Board -->
@@ -35,9 +49,9 @@
         </div>
       </div>
 
-      <h2>New Game</h2>
-      <button id="new-game" class="btn btn-primary">New Game</button>
+    </section>
 
+      <section id="login">
        <!-- Sign Up -->
       <div class="row">
       <form id="sign-up" class="col-md-6 mb-5">
@@ -56,6 +70,7 @@
         <button class="btn btn-primary">Sign In</button>
       </form>
       </div>
+    </section>
 
        <!-- Button trigger modal -->
       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> -->
@@ -82,18 +97,6 @@
           </div>
         </div>
       </div> -->
-
-       <!-- Change Password -->
-      <h2>Change Password</h2>
-      <form id="change-password">
-        <input type="password" name="passwords[old]" placeholder="Old Password">
-        <input type="password" name="passwords[new]" placeholder="New Password">
-        <button class="btn btn-primary">Change Password</button>
-      </form>
-
-       <!-- Sign Out -->
-      <h2>Sign Out</h2>
-      <button id="sign-out" class="btn btn-primary">Sign Out</button>
 
     </body>
 </html>

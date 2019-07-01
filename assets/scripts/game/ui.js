@@ -5,7 +5,7 @@ const hideMessaging = function () {
   setTimeout(function () {
     $('#message').text('')
     $('#message').hide()
-  }, 4000)
+  }, 8000)
 }
 
 const createGameSuccess = responseData => {
@@ -14,7 +14,8 @@ const createGameSuccess = responseData => {
   // console.log('gameId is ' + gameId)
   store.game = responseData.game
   // console.log('store.newGame is ' + store.game)
-  $('#message').text('New Game!')
+  $('#game').show()
+  $('#message').text('New Game! You are player X.')
   $('#message').css('color', 'green')
   $('#message').show()
   hideMessaging()
@@ -63,8 +64,21 @@ const createGameFailure = function (data) {
 // }
 
 const updateGameSuccess = responseData => {
-  $('#message').text('Nicely played!')
-  $('#message').css('color', 'green')
+  // $('#message').text('Nicely played!')
+  // $('#message').css('color', 'green')
+  // $('#message').show()
+  // hideMessaging()
+}
+
+const getRecordSuccess = () => {
+  $('#message').text(`Your record is ${store.game}.`)
+  $('#message').show()
+  hideMessaging()
+}
+
+const getRecordFailure = () => {
+  $('#message').text('Unable to retrieve record.')
+  $('#message').css('color', 'red')
   $('#message').show()
   hideMessaging()
 }
@@ -126,11 +140,17 @@ const updateGameSuccess = responseData => {
 //       // Record successful turn
 //       turnSuccess = 'y'
 //       // If empty & current player is 2, place O
-//     } else if (currentPlayer === 2) {
+//     } else i// $('#message').text('Nicely played!')
+// $('#message').css('color', 'green')
+// $('#message').show()
+// hideMessaging()f (currentPlayer === 2) {
 //       square.text('O')
 //       // Record turn in game array
 //       let index = $('.board').index(this)
-//       game.splice(index, 1, 2)
+//       game.spli// $('#message').text('Nicely played!')
+  // $('#message').css('color', 'green')
+  // $('#message').show()
+  // hideMessaging()ce(index, 1, 2)
 //       // Record successful turn
 //       turnSuccess = 'y'
 //     }
@@ -174,9 +194,10 @@ const updateGameSuccess = responseData => {
 //   $('form').trigger('reset')
 // }
 
-
 module.exports = {
   createGameSuccess,
   createGameFailure,
-  updateGameSuccess
+  updateGameSuccess,
+  getRecordSuccess,
+  getRecordFailure
 }
