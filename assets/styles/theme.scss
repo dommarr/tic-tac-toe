@@ -1,24 +1,80 @@
 @import 'colors';
 @import 'typography';
 
-$background-color: $paper-white;
-$font-color: $nearly-black;
-$highlight-color: $light-gray;
-$min-dim: 18rem;
+// $background-color: $paper-white;
+// $font-color: $nearly-black;
+// $highlight-color: $light-gray;
 
-.board {
-  background-color: $background-color;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 2rem
-  //min-height: $min-dim;
-  // display: inline-block;
-  // height: 5em;
-  // margin: .25rem;
-  // width: 5em;
+// GRADIENT
+// background: linear-gradient(to right, rgba(0, 29, 46, 0.75) 0%,
+// rgba(0, 29, 45, 0.76) 20%,
+// rgba(0, 28, 44, 0.81) 42%,
+// rgba(0, 27, 43, 0.92) 74%,
+// rgba(0, 27, 42, 0.94) 100%);
+
+body {
+  background-color: bg-secondary;
 }
 
-.col-4 {
-  padding-top:25%;
-  width:25%;
+.top {
+  background-color: bg-dark;
+  align-items: center;
+  justify-content: center;
+}
+
+.h1 {
+  font-size: 10vmin;
+  margin: 0;
+}
+
+.forms {
+  padding-top: 10px;
+}
+
+.board {
+  border-right: 8px solid;
+  border-right: 8px solid;
+  border-bottom: 8px solid;
+  height: calc(100%/3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10vmin;
+}
+
+.board:nth-child(3n) {
+  border-right: 0;
+}
+
+.board:nth-last-child(-1n+3) {
+  border-bottom: 0;
+}
+
+.game-board {
+  width: 100vmin;
+}
+
+.row {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  margin: auto;
+  right: 0;
+}
+//
+// .top {
+//   background: linear-gradient(to right, rgba(0, 29, 46, 0.75) 0%,
+//   rgba(0, 29, 45, 0.76) 20%,
+//   rgba(0, 28, 44, 0.81) 42%,
+//   rgba(0, 27, 43, 0.92) 74%,
+//   rgba(0, 27, 42, 0.94) 100%);
+//   background-color: $menu-black;
+// }
+//
+// .login {
+//   background-color: $menu-black;
+// }
+//
+.container {
+  background-color: $lighter-blue;
 }
