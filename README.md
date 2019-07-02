@@ -22,71 +22,71 @@ A SPA of the classic game, built by `Dom Marrone`.
 
 Be deployed online, where the rest of the world can access it.
 
-1.  [ ] Deploy on your public Github page, not Github Enterprise.
-1.  [ ] Present a working browser game, built by you, hosted and deployed on GitHub Pages.
+[x] Deploy on your public Github page, not Github Enterprise.
+[x] Present a working browser game, built by you, hosted and deployed on GitHub Pages.
 
 #### Version Control
 
 Demonstrate using version control by:
 
-1.  [x] Sharing your work through a git repository hosted on Github.
-1.  [ ] Making frequent, cohesive commits dating back to the **first day**
+[x] Sharing your work through a git repository hosted on Github.
+[x] Making frequent, cohesive commits dating back to the **first day**
 of the project week.
 
 #### Documentation
 
 Produce documentation in the form of a **README**, which must:
 
-1.  [x] Pin your repository on GitHub as a Popular Repository
-1.  [ ] Complete the repository `Description` field and `Website` field with a meaningful sentence description of the application and link to the live URL
-1.  [ ] List technologies used
-1.  [ ] Document your planning and tell a story about your development process and problem-solving strategy.
-1.  [ ] List unsolved problems which would be fixed in future iterations.
-1.  [ ] Link to wireframes and user stories.
+[x] Pin your repository on GitHub as a Popular Repository
+[x] Complete the repository `Description` field and `Website` field with a meaningful sentence description of the application and link to the live URL
+[x] List technologies used
+[x] Document your planning and tell a story about your development process and problem-solving strategy.
+[x] List unsolved problems which would be fixed in future iterations.
+[x] Link to wireframes and user stories.
 
 #### Technical Specifications
 
-1.  [ ] Use a custom game engine written by you.
-1.  [ ] Be a single-page application, no browser refresh.
-1.  [ ] Render a game board in the browser.
-1.  [ ] Switch turns between X and O (or whichever markers you select).  Tip:  Assume player X is the first player to start the game.
-1.  [ ] Visually display which side won if a player gets three in a row or show a draw if neither wins.
-1.  [ ] Support playing multiple games, one at a time.
-1.  [ ] Use jQuery for DOM manipulation and event handling.
-1.  [ ] Use AJAX for interacting with a provided API.
+[x] Use a custom game engine written by you.
+[x] Be a single-page application, no browser refresh.
+[x] Render a game board in the browser.
+[x] Switch turns between X and O (or whichever markers you select).
+[x] Visually display which side won if a player gets three in a row or show a draw if neither wins.
+[x] Support playing multiple games, one at a time.
+[x] Use jQuery for DOM manipulation and event handling.
+[x] Use AJAX for interacting with a provided API.
 
 #### API Specifications
 
-1.  [ ] Create new games on the server. (CREATE)
-1.  [ ] Update a game by storing new moves. (UPDATE)
-1.  [ ] Visually display the results of retrieving game statistics, such as total games won by a user. (READ)
-1.  [ ] Give feedback to the user after each action.
+[x] Create new games on the server. (CREATE)
+[x] Update a game by storing new moves. (UPDATE)
+[x] Visually display the results of retrieving game statistics, such as total games won by a user. (READ)
+[x] Give feedback to the user after each action.
 
 #### Auth Specifications
 
-1.  [ ] Signup with email, password, and password confirmation.
-1.  [ ] Login with email and password.
-1.  [ ] Logout when logged in.
-1.  [ ] Change password with current and new password.
-1.  [ ] Signup and Signin must only be available to not signed in users.
-1.  [ ] Logout and Change password must only be available to signed in users.
-1.  [ ] Give feedback to the user after each action's success or failure.
-1.  [ ] All forms must clear after submit success or failure
+[x] Signup with email, password, and password confirmation.
+[x] Login with email and password.
+[x] Logout when logged in.
+[x] Change password with current and new password.
+[x] Signup and Signin must only be available to not signed in users.
+[x] Logout and Change password must only be available to signed in users.
+[x] Give feedback to the user after each action's success or failure.
+[x] All forms must clear after submit success or failure
 
 #### DO NOT!!
 
-1.  [ ] Delete your repository at any time or start over.
-1.  [ ] Rely on refreshing the page for any functionality.
-1.  [ ] Have any user-facing bugs.
-    -  [ ] Display non-functional buttons, nor buttons that do not successfully complete a task.
-    -  [ ] Show actions at inappropriate times (example: sign out button when not signed in).
-    -  [ ] Forms not clearing at appropriate times (example: sign up form not clearing after success).
-1.  [ ] Allow the same game to be played after a player has won or tied.
-1.  [ ] Allow players to move in the same square more than once.
-1.  [ ] Change players when an invalid move is made.
-1.  [ ] Use alerts for anything.
-1.  [ ] Display errors or warnings in the console.
-1.  [ ] Display debugging messages in the console.
+[x] Delete your repository at any time or start over.
+[x] Rely on refreshing the page for any functionality.
+[x] Have any user-facing bugs.
+    -  [x] Display non-functional buttons, nor buttons that do not successfully complete a task.
+    -  [x] Show actions at inappropriate times (example: sign out button when not signed in).
+    -  [x] Forms not clearing at appropriate times (example: sign up form not clearing after success).
+[x] Allow the same game to be played after a player has won or tied.
+[x] Allow players to move in the same square more than once.
+[x] Change players when an invalid move is made.
+[x] Use alerts for anything.
+[x] Display errors or warnings in the console.
+[x] Display debugging messages in the console.
 ```
 
 ### Game Rules
@@ -102,39 +102,36 @@ Produce documentation in the form of a **README**, which must:
 
 
 ## Development Process
-
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+1. I started with user authentication (sign up, sign in, sign out, and change password).
+2. I then developed the game board and the game engine, as that was expected to take the most time.
+3. Once the game engine was complete, I connected to the API to record games and retrieve records.
+4. Finally, I focused on styling the game, which still deserves additional work.
 
 ## User Stories
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+  - As a new user, I want to sign up to have an account so I can login next time.
+  - As an existing user, I want to be able to sign in.
+  - As an existing user, I want to be able to see the result of my last game and my overall record.
+  - As a winning user, I want to be rewarded, so I am compelled to play again.
+  - As a playing user, I want to keep a record of the games within the session..
 
 ## Wireframes
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+![alt text][logo]
+[logo]:https://i.imgur.com/D4oKI0M.png
+
+![alt text][logo2]
+[logo2]:https://i.imgur.com/rqPH7DS.png
+
+![alt text][logo3]
+[logo3]:https://i.imgur.com/DONB4T3.png
 
 ## Unsolved Issues / Future Features
+Unsolved Issues:
+1. The styling of the game needs additional work and time.
+2. I prefer to have the game board visible after a player wins, but frozen so no further moves can be played. Planning to update.
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-
-
-
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+For a future version I would like to...
+1. Record the number of wins, so the player can see their overall record.
+2. Have players enter their names and have the game state the person's turn by name.
+3. Play an animation when someone wins.

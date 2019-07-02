@@ -8,9 +8,7 @@
 
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
-// const exampleEvents = require('./examples/events')
 
-// $('game').style.display = none
 $(document).ready(function () {
   $('#game').hide()
   $('#nav').hide()
@@ -32,9 +30,3 @@ $(() => {
   $('.board').on('click', gameEvents.onUpdateGame)
   $('#record').on('click', gameEvents.onGetRecord)
 })
-
-// let recordTurn = () => {
-//   let index = $('.board').index(this)
-//   game.splice(index, 1, 1)
-//   console.log(game)
-// }

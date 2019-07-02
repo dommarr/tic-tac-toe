@@ -27,7 +27,7 @@ const updateGame = function (updateObject, gameID) {
   return $.ajax({
     url: config.apiUrl + `games/` + gameID,
     method: 'PATCH',
-    data: updateObject, // can just do data, not data: data, because input param has the same name
+    data: updateObject,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

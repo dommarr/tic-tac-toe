@@ -40,7 +40,6 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = responseData => {
-  console.log('Response data is ', responseData)
   successMessage('Sign in successful.')
   // Keeping track of the user, so we can have the token for the API.
   // We use 'store' so we can access the token in any file.

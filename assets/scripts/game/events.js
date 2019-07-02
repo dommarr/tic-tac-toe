@@ -34,8 +34,8 @@ const winner = function () {
     (game[6] === game[7] && game[7] === game[8] && game[6] !== 0)
   ) {
     win = true
-    console.log(`Player ${currentPlayer} wins!!`)
     $('#currentPlayer').text(`Player ${currentPlayer} wins!!`)
+    $('.game-board').hide()
   }
 }
 
@@ -57,7 +57,6 @@ const onCreateGame = event => {
   game = [0, 0, 0, 0, 0, 0, 0, 0, 0]
   // Reset win
   win = false
-  console.log('Requested new game.')
   event.preventDefault()
   const gameData = getFormFields(event.target)
   api.createGame(gameData)
@@ -91,7 +90,6 @@ const onUpdateGame = function (event) {
     $('#message').show()
     hideMessaging()
   }
-  console.log(`game array is ${game}`)
   // If turn was succesful, check for winner
   if (turnSuccess === 'y') {
     winner()
@@ -126,31 +124,10 @@ const onUpdateGame = function (event) {
       }
     }
   }
-  console.log(updateObject)
   api.updateGame(updateObject, store.game.id)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
 }
-
-// const onUpdateGame = function (event) {
-//   event.preventDefault()
-//   // const formData = getFormFields(event.target)
-//   let square = $(event.target)
-//   let update = {
-//     game: {
-//       cell: {
-//         // Check later and maybe use your code from earlier.
-//         index: $(square).data('cell-index'),
-//         value: $(square).data('cell-value')
-//       },
-//       over: false
-//     }
-//   }
-//   console.log(update)
-//   api.updateGame(update)
-//     .then(ui.updateGameSuccess)
-//     .catch(ui.updateGameFailure)
-// }
 
 module.exports = {
   onCreateGame,
