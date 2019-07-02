@@ -10,7 +10,7 @@ const getRecord = () => {
     }
   })
 }
-
+// Create Game
 const createGame = (gameData) => {
   return $.ajax({
     url: config.apiUrl + '/games',
@@ -25,7 +25,7 @@ const createGame = (gameData) => {
 const updateGame = function (updateObject, gameID) {
   // make UPDATE request to /books
   return $.ajax({
-    url: config.apiUrl + `games/` + gameID,
+    url: config.apiUrl + `/games/` + gameID,
     method: 'PATCH',
     data: updateObject,
     headers: {
