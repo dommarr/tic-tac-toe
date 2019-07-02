@@ -27,6 +27,10 @@ body {
   margin: 0;
 }
 
+.h2 {
+  font-size: 3vmin;
+}
+
 .forms {
   padding-top: 10px;
 }
@@ -51,6 +55,11 @@ body {
 }
 
 .game-board {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  margin: auto;
+  right: 0;
   width: 100vmin;
 }
 
@@ -61,6 +70,11 @@ body {
   margin: auto;
   right: 0;
 }
+
+#message {
+  font-size: 2vmin
+}
+
 //
 // .top {
 //   background: linear-gradient(to right, rgba(0, 29, 46, 0.75) 0%,
