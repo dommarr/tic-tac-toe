@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body class="bg-secondary">
+      <div class="top">
+
+      <h1 class="h1 jumbotron jumbotron-fluid bg-primary text-light pl-5">Tic Tac Toe</h1>
+
+      <nav id="nav" class="nav nav-pills bg-dark py-4 mb-4">
+        <button id="record" class="nav-item btn btn-primary ml-5 mr-2">Your  Record</button>
+        <button id="new-game" class="nav-item btn btn-primary mx-2">New Game</button>
+        <button id="sign-out" class="nav-item btn btn-primary mx-2">Sign Out</button>
+        <button id="password" class="nav-item btn btn-primary mx-2">Change Password</button>
+      </nav>
+      <form id="change-password" class="bg-dark pl-5 py-3 justify-content-end">
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+        <input type="password" name="passwords[new]" placeholder="New Password">
+        <button class="btn btn-primary">Change Password</button>
+      </form>
+
+      <p id="message" class="text-light pl-5"></p>
+
+    </div>
+<section id="game">
+      <!-- <h2 id="currentPlayer" class="text-light pl-5">Player X's Turn</h2> -->
+      <div class="card text-white mb-8 rounded-top" style="max-width: 30rem;">
+        <div class="card-header bg-primary border-white">Current Game</div>
+        <div class="card-body bg-dark rounded-bottom">
+          <h5 class="card-title text-light" id="currentPlayer">Player X's Turn</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+
+      <div id="space" class="mb-4"></div>
+
+      <!-- Game Board -->
+<div class="game-board">
+      <div class="game-container embed-responsive embed-responsive-1by1">
+        <div class="row embed-responsive-item">
+          <div class="board col-4 text-light">X</div>
+          <div class="board col-4 text-light">X</div>
+          <div class="board col-4 text-light">X</div>
+          <div class="board col-4 text-light">X</div>
+          <div class="board col-4 text-light">X</div>
+          <div class="board col-4 text-light">X</div>
+          <div class="board col-4 text-light">X</div>
+          <div class="board col-4 text-light">X</div>
+          <div class="board col-4 text-light">X</div>
+        </div>
+      </div>
+</div>
+
+    </section>
+
+      <section class="container col-6 shadow-lg rounded bg-dark text-light" id="login">
+       <!-- Sign Up -->
+      <div class="row forms">
+      <form id="sign-up" class="col-md-5 mb-3 mr-3">
+        <h2>Sign Up</h2>
+        <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
+        <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
+        <input class="form-control mb-2" type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+        <button class="btn btn-primary">Sign Up</button>
+      </form>
+
+       <!-- Sign In -->
+      <form id="sign-in" class="col-md-5 ml-3">
+        <h2>Sign In</h2>
+        <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
+        <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
+        <button class="btn btn-primary">Sign In</button>
+      </form>
+      </div>
+    </section>
+
+    </body>
+</html>
