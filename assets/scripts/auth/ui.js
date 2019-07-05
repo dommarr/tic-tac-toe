@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const api = require('./api')
 
 const hideMessaging = function () {
   setTimeout(function () {
@@ -30,9 +31,10 @@ const failureMessage = message => {
 }
 
 const signUpSuccess = responseData => {
-  successMessage('Thanks for signing up!')
+  successMessage(`Thanks for signing up! You are now logged in.`)
   $('#login').hide()
   $('#nav').show()
+  api.signIn(store.save)
 }
 
 const signUpFailure = () => {

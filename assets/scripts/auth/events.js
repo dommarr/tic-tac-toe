@@ -3,11 +3,13 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 
 const onSignUp = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+  store.save = formData
   api.signUp(formData)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)

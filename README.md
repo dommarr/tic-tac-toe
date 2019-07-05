@@ -17,7 +17,7 @@ A SPA of the classic game, built by `Dom Marrone`.
 ## Planning
 
 ### Project Requirements
-```markdown
+
 #### Deployment
 
 Be deployed online, where the rest of the world can access it.
@@ -84,10 +84,9 @@ Produce documentation in the form of a **README**, which must:
 [x] Allow the same game to be played after a player has won or tied.
 [x] Allow players to move in the same square more than once.
 [x] Change players when an invalid move is made.
-[x] Use alerts for anything.
+[x] Use alerts for anythalt texting.
 [x] Display errors or warnings in the console.
 [x] Display debugging messages in the console.
-```
 
 ### Game Rules
 1. The first player to play, `player 1`, will be randomly assigned.
@@ -117,14 +116,11 @@ Produce documentation in the form of a **README**, which must:
 
 ## Wireframes
 
-![alt text][logo]
-[logo]:https://i.imgur.com/D4oKI0M.png
+![Wireframe 1](https://i.imgur.com/D4oKI0M.png)
 
-![alt text][logo2]
-[logo2]:https://i.imgur.com/rqPH7DS.png
+![Wireframe 2](https://i.imgur.com/rqPH7DS.png)
 
-![alt text][logo3]
-[logo3]:https://i.imgur.com/DONB4T3.png
+![Wireframe 3](https://i.imgur.com/DONB4T3.png)
 
 ## Unsolved Issues / Future Features
 Unsolved Issues:

@@ -22,6 +22,46 @@ body {
   justify-content: center;
 }
 
+.card {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  margin: auto;
+  right: 0;
+  font-size: 2vmin;
+  // width: 100vmin;
+}
+
+.card-title {
+  font-size: 3vmin;
+}
+
+// .card-columns .card {
+//     display: inline-block;
+//     min-width: 576px;
+//     width: 100%;
+//     margin-bottom: .75rem;
+//     text-align: center;
+//     padding: 1rem;
+// }
+//
+// .card {
+//   position: relative;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -ms-flex-direction: column;
+//   flex-direction: column;
+//   min-width: 0;
+//   word-wrap: break-word;
+//   background-color: #fff;
+//   background-clip: border-box;
+//   border: 1px solid rgba(0,0,0,.125);
+//   border-radius: .25rem;
+// }
+
 .h1 {
   font-size: 10vmin;
   margin: 0;
@@ -72,7 +112,7 @@ body {
 }
 
 #message {
-  font-size: 2vmin
+  font-size: 2vmin;
 }
 
 //

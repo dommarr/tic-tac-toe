@@ -18,13 +18,13 @@
 
       <h1 class="h1 jumbotron jumbotron-fluid bg-primary text-light pl-5">Tic Tac Toe</h1>
 
-      <nav id="nav" class="navbar navbar-dark nav-justified bg-dark py-4 mx-9">
-        <button id="record" class="btn btn-primary">Your Record</button>
-        <button id="new-game" class="btn btn-primary">New Game</button>
-        <button id="sign-out" class="btn btn-primary">Sign Out</button>
-        <button id="password" class="btn btn-primary">Change Password</button>
+      <nav id="nav" class="nav nav-pills bg-dark py-4 mb-4">
+        <button id="record" class="nav-item btn btn-primary ml-5 mr-2">Your  Record</button>
+        <button id="new-game" class="nav-item btn btn-primary mx-2">New Game</button>
+        <button id="sign-out" class="nav-item btn btn-primary mx-2">Sign Out</button>
+        <button id="password" class="nav-item btn btn-primary mx-2">Change Password</button>
       </nav>
-      <form id="change-password" class="bg-dark p-4 justify-content-end">
+      <form id="change-password" class="bg-dark pl-5 py-3 justify-content-end">
         <input type="password" name="passwords[old]" placeholder="Old Password">
         <input type="password" name="passwords[new]" placeholder="New Password">
         <button class="btn btn-primary">Change Password</button>
@@ -34,7 +34,16 @@
 
     </div>
 <section id="game">
-      <h2 id="currentPlayer" class="text-light pl-5">Player X's Turn</h2>
+      <!-- <h2 id="currentPlayer" class="text-light pl-5">Player X's Turn</h2> -->
+      <div class="card text-white mb-8 rounded-top" style="max-width: 30rem;">
+        <div class="card-header bg-primary border-white">Current Game</div>
+        <div class="card-body bg-dark rounded-bottom">
+          <h5 class="card-title text-light" id="currentPlayer">Player X's Turn</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+
+      <div id="space" class="mb-4"></div>
 
       <!-- Game Board -->
 <div class="game-board">

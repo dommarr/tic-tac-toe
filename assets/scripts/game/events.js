@@ -21,6 +21,11 @@ const hideMessaging = function () {
   }, 4000)
 }
 
+// Draw - check for zero
+const checkForZero = (num) => {
+  return (num !== 0)
+}
+
 // Check for winner
 const winner = function () {
   if (
@@ -35,6 +40,10 @@ const winner = function () {
   ) {
     win = true
     $('#currentPlayer').text(`Player ${currentPlayer} wins!!`)
+    $('.game-board').hide()
+  } else if (game.every(checkForZero)) {
+    win = true
+    $('#currentPlayer').text(`It's a draw!`)
     $('.game-board').hide()
   }
 }
@@ -85,10 +94,10 @@ const onUpdateGame = function (event) {
     turnSuccess = 'y'
   } else {
     turnSuccess = 'n'
-    $('#message').text('Please select an empty square.')
-    $('#message').css('color', 'red')
-    $('#message').show()
-    hideMessaging()
+    $('.card-text').text('Please select an empty square.')
+    // $('#message').css('color', 'red')
+    // $('#message').show()
+    // hideMessaging()
   }
   // If turn was succesful, check for winner
   if (turnSuccess === 'y') {
@@ -105,10 +114,10 @@ const onUpdateGame = function (event) {
         }
       }
       // update messaging of a nice play
-      $('#message').text('Nicely played!')
-      $('#message').css('color', 'green')
-      $('#message').show()
-      hideMessaging()
+      $('.card-text').text('Nicely played!')
+      // $('#message').css('color', 'green')
+      // $('#message').show()
+      // hideMessaging()
       // switch player
       currentPlayer = (currentPlayer === 'X' ? 'O' : 'X')
       $('#currentPlayer').text(`Player ${currentPlayer}'s Turn`)

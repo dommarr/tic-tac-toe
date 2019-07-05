@@ -29,16 +29,16 @@ const updateGameSuccess = responseData => {
 }
 
 const getRecordSuccess = responseData => {
-  $('#message').text(`You've played ${responseData.games.length} games.`)
-  $('#message').show()
-  hideMessaging()
+  $('.card-text').text(`You've played ${responseData.games.length} games.`)
+  // $('#message').show()
+  // hideMessaging()
 }
 
 const getRecordFailure = () => {
-  $('#message').text('No record, you played 0 games.')
-  $('#message').css('color', 'red')
-  $('#message').show()
-  hideMessaging()
+  $('.card-text').text('No record, you played 0 games.')
+  // $('#message').css('color', 'red')
+  // $('#message').show()
+  // hideMessaging()
 }
 
 module.exports = {
